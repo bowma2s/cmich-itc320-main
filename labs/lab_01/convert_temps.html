@@ -8,7 +8,27 @@
     <main>
         <h1>Convert from Fahrenheit to Celsius</h1>
         <script>
+            
+            
+            while(true){
+            let input = prompt("Enter Fahrenheit temperature");
+            input = parseFloat(input);
+           if(input === 999){
+            break;
+           }
+           else if(input < -100 || input > 212){
+                alert("You entered " + input + "\nEntry range must be between -100 and 212");
+            }else{
+                document.write(input + " F" + " = " + ((input - 32) * 5/9).toFixed(1) + " C" + "<br><br>");
+                
+            }
 
+        }
+
+            
+           
+            
+        
         </script>
     </main>
 </body>
