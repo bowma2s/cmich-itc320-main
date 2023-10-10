@@ -10,6 +10,70 @@
         <h1>Show letter grade</h1>
         <script>
 
+            "use strict";
+            let grade = null;
+            let total = 0;
+
+            while(true){
+                let input = prompt("Enter number grade from 0 through 100 \n Or enter 999 to end entries");
+                input = parseInt(input);
+                if(input == 999){
+                    break;
+                }
+                else if(input < 0){
+                    break;
+                }
+                if(input > 1000 || isNaN(input)){
+                    //console.log("input over 1000 or NaN");
+                    input;
+                }
+                else{
+                    if(input >= 94){
+                        grade = "A";
+                    }
+                    else if(input >= 90){
+                        grade = "A-";
+                    }
+                    else if(input >= 87){
+                        grade = "B+";
+                    }
+                    else if(input >= 84){
+                        grade = "B";
+                    }
+                    else if(input >= 80){
+                        grade = "B-";
+                    }
+                    else if(input >= 77){
+                        grade = "C+";
+                    }
+                    else if(input >= 74){
+                        grade = "C";
+                    }
+                    else if(input >= 70){
+                        grade = "C-";
+                    }
+                    else if(input >= 67){
+                        grade = "D+";
+                    }
+                    else if(input >= 64){
+                        grade = "D";
+                    }
+                    else if(input >= 60){
+                        grade = "D-";
+                    }
+                    else{
+                        grade = "E";
+                    }
+                    total += input;
+                    if(total > 250){
+                       // console.log("over 250 points");
+                        input;
+                    }else{
+                    document.write("Grade " + input + " = " + grade + "<br><br>");
+                    }
+                }
+            }
+
         </script>
     </main>
 </body>
