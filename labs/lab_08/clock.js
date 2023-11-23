@@ -6,20 +6,16 @@ const padSingleDigit = num => num.toString().padStart(2, "0");
 const displayCurrentTime = () => {
    
     const now = new Date();
-    let hours = now.getHours();
+    let milliseconds = now.getMilliseconds();
     let minutes = now.getMinutes();
     let seconds = now.getSeconds();
     let mornEven = "AM";
 
-    if (hours > 12) {
-        hours -= 12;
-        mornEven = "PM";
-    } else if (hours === 0) {
-        hours = 12;
-    }
-    $("#hours").textContent = hours;
+    
+    
     $("#minutes").textContent = padSingleDigit(now.getMinutes());
     $("#seconds").textContent = padSingleDigit(now.getSeconds());
+    $("#milliseconds").textContent = padSingleDigit(now.getMilliseconds());
     $("#ampm").textContent = mornEven;
 };
 
