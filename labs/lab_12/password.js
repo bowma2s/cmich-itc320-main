@@ -10,11 +10,29 @@ const getRandomNumber = max => {
 	return random;
 };
 
+
+
 $(document).ready( () => {
-    $("#generate").click( () => {
-        $("#password").val( "" ); // clear previous entry
+    $("#generate").click(() => {
+        let input = $("#num").val().trim();
+
+        if (isNaN(input)) {
+            alert("Please enter a valid number");
+        } else {
+            let generatedPassword = "";
+            const chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_-+!@";
+            for (let i = 0; i < input; i++) {
+                const index = getRandomNumber(chars.length)-1;
+                generatedPassword += chars.charAt(index);
+            }
+            $("#password").val(generatedPassword);
+        }
+
+        // $("#num").val(""); 
     
-        const chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_-+!@";
+        // $("#password").val( "" ); // clear previous entry
+    
+        
         
     }); // end click()
     
