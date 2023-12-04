@@ -7,6 +7,12 @@ const request = "?api_key=DEMO_KEY&page=1";
 const roverData = new Map();
 
 // asynchronous getJson() function that makes API requests goes here
+async function getJson(url) {
+    console.log(url);
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  }
 
 const getSelectedDate = () => {
     const year = $("#year").val();
